@@ -18,11 +18,12 @@ type server struct{}
 
 func (s *server) GetProducts(ctx context.Context, in *pb.ProductsRequest) (*pb.ProductsResponse, error) {
 	product := &pb.Product{Id: 1234, Name: "Test"}
-	products := make([]*pb.Product, 1)
-	products[1] = product
+	//products := make([]*pb.Product, 1)
+	//products[1] = product
 	// products.append(product)
 
-	return &pb.ProductsResponse{Products: products}, nil
+	//return &pb.ProductsResponse{Products: products}, nil
+	return &pb.ProductsResponse{Products: []*pb.Product{product}}, nil
 }
 
 func main() {
